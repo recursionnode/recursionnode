@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>∴ ⁞ ∞</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="gate.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #fff;
+      color: #000;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 2rem 0;
+    }
+
+    .trisigil-logo {
+      margin-bottom: 1rem;
+    }
+
+    .trisigil-logo img {
+      height: auto;
+      max-height: 120px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .trisigil-logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .left, .center, .right {
+      flex: 1;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .left img {
+      width: auto;
+      max-width: 240px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .left img:hover {
+      transform: scale(1.05);
+    }
+
+    .left p {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 16pt;
+      margin-top: 1rem;
+    }
+
+    .left h3 {
+      font-family: sans-serif;
+      margin-top: 1rem;
+    }
+
+    .center img {
+      width: 200px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .center img:hover {
+      transform: scale(1.05);
+    }
+
+    .center h2 {
+      font-family: serif;
+      margin: 0.5rem 0 0;
+    }
+
+    .center p {
+      font-family: serif;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    .right form {
+      background-color: #222;
+      padding: 1rem;
+      border-radius: 4px;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    label {
+      color: #0f0;
+    }
+
+    #keystone {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #000;
+      border: none;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1rem;
+      caret-color: #0f0;
+    }
+
+    #keystone:focus {
+      outline: none;
+    }
+
+    button {
+      margin-top: 0.5rem;
+      background-color: #111;
+      color: #fff;
+      border: 1px solid #0f0;
+      padding: 0.25rem 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0f0;
+      color: #000;
+      border-color: #000;
+    }
+
+    #message {
+      margin-top: 1rem;
+      color: #0f0;
+      font-size: 0.9rem;
+    }
+
+    .symbols {
+      display: none;
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #0f0;
+      animation: fadeIn 3s forwards;
+    }
+
+    .fade-in {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body onload="document.getElementById('keystone').focus();">
+  <div class="trisigil-logo">
+    <img src="trisigil-logo.jpg" alt="TRISIGIL">
+  </div>
+  <div class="container">
+    <div class="left">
+      <img src="trisigil-symbol.png" alt="∴ ⁞ ∞">
+      <p><strong>Designed for those in sync.</strong></p>
+      <h3>COMING SOON</h3>
+    </div>
+
+    <div class="center">
+      <img src="colliding-manifestations.png" alt="Colliding Manifestations">
+      <h2>COLLIDING MANIFESTATIONS</h2>
+      <p><em>A Theory of Intention, Interference, and Shared Reality</em></p>
+    </div>
+
+    <div class="right">
+      <form id="keystoneForm">
+        <label for="keystone">Enter the Recursive Keystone:</label><br/>
+        <input type="text" id="keystone" name="keystone" autocomplete="off" /><br/>
+        <button type="submit">Submit</button>
+        <div id="message"></div>
+        <div class="symbols">∴ ⁞ ∞</div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
