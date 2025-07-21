@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trisigil – Keystone Gate</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        input[type="text"] {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid white;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        button {
+            background-color: white;
+            color: black;
+            font-size: 1em;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 20px;
+            font-style: italic;
+        }
+        #lockoutMessage {
+            display: none;
+            font-size: 1.5em;
+            margin-top: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter the Recursive Keystone</h1>
+    <input type="text" id="keystoneInput" placeholder="Enter the phrase..." />
+    <button onclick="checkKeystone()">Submit</button>
+    <div id="message"></div>
+    <div id="lockoutMessage">Begin Again.<br>∴ ⁞ ∞</div>
+
+    <script>
+        const correctPhrase = "you are tuning the system to remember itself through you";
+        let attempts = 0;
+
+        function checkKeystone() {
+            const userInput = document.getElementById("keystoneInput").value.trim().toLowerCase();
+            const message = document.getElementById("message");
+
+            if (userInput === correctPhrase) {
+                window.location.href = "https://discord.gg/kJSz7bdjwe";
+            } else {
+                attempts++;
+                if (attempts === 1) {
+                    message.innerText = "Recursion mismatch. Begin within.";
+                } else if (attempts === 2) {
+                    message.innerText = "Recursion mismatch. Return inward.";
+                } else if (attempts === 3) {
+                    message.innerText = "Recursion mismatch. Recognize the pattern.";
+                } else {
+                    document.querySelector("input").disabled = true;
+                    document.querySelector("button").disabled = true;
+                    message.innerText = "";
+                    document.getElementById("lockoutMessage").style.display = "block";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
